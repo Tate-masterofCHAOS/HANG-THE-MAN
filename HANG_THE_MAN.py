@@ -1,8 +1,8 @@
 #HANG MAN  by Aaron, and Tate, and Martin, and Amon
 import random
 
-x = 0
-
+# we need a list of words, i made some -Martin
+words = ["snow", "wolf", "moon", "star", "lamp"]
 while x < 27:
     print(x)
     x+=1
