@@ -2,7 +2,7 @@
 import random
 
 # we need a list of words, i made some -Martin
-words = ["snow", "wolf", "moon", "star", "lamp"]
+words = ["snow", "wolf", "moon", "star", "lamp"] #if we want we can add more words of 4 letters
 while x < 27:
     print(x)
     x+=1
