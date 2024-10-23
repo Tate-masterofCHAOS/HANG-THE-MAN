@@ -45,7 +45,7 @@ elif input("Tell a letter") == "o":
     spa_3= "o"
 elif input("Tell me letter") == "w":
     spa_4 = "w"
-
+else
 
 
 
