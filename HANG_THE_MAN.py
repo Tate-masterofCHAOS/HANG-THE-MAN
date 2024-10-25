@@ -1,22 +1,16 @@
-Wrong_count = 0
 #HANG MAN by Aaron, and Tate, and Martin, and Amon
 import random
-
-words = ["snow", "wolf", "moon", "star", "lamp", "bruh", "sing", "rice", "tree", "keep", "dark", "aron", "sans", "wine", "volk", "sing", "sins","bean", "rugs", "tape", "bait", "dead","kind", "thin", "song", "road", "read", "quit", "race"] 
-#Variables: EVERYONE!!!!!!!!!!!!!!!!!!!!!
+#make all the variables/list: Everyone
+Wrong_count = 0
 spa_0 = "_"
 spa_1 = "_"
 spa_2 = "_"
-spa_3 = "_"     
-
-#Remember to write the input for making a guess
-
-#Function of random 4 letter word, and add or not add a body part depending on the letter chosen:(done) Aaron Shelby
+spa_3 = "_"    
+words = ["snow", "wolf", "moon", "star", "lamp", "bruh", "sing", "rice", "tree", "keep", "dark", "aron", "sans", "wine", "volk", "sing", "sins","bean", "rugs", "tape", "bait", "dead","kind", "thin", "song", "road", "read", "quit", "race"] 
+word = random.choice(words)
+#Function for winning, and add or not add a body part depending on the letter chosen:Aaron Shelby and Tate Morgan
 def win():
    return f"Congrats, you get ඞamongiඞ !"
-
-word = random.choice(words)
-    
 def wrong():
     global Wrong_count
     head = "0"
@@ -103,9 +97,7 @@ def wrong():
         else: 
             print("Congratulations, your a failure ඞ")
             print("The word was", word)
-#Print the gallows to hang the man: Tate Morgan 
-
-#Check the input: Amon Dippඞ and loop the guesses: Martin Labarca
+#Make a guess: Amon Dipp and loop the guesses: Martin Labarca
 while True:
     ans = input("Tell a letter:")
     if ans == word[0]:
