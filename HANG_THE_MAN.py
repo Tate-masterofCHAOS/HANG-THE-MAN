@@ -1,19 +1,24 @@
+Wrong_count = 0
 #HANG MAN by Aaron, and Tate, and Martin, and Amon
 import random
 
+words = ["snow", "wolf", "moon", "star", "lamp", "bruh", "sing", "rice", "tree", "keep", "dark", "aron", "sans", "wine", "volk", "sing", "sins","bean", "rugs", "tape", "bait", "dead","kind", "thin", "song", "road", "read", "quit", "race"] 
 #Variables: EVERYONE!!!!!!!!!!!!!!!!!!!!!
-spa_1 = "1"
-spa_2 = "2"
-spa_3 = "3"
-spa_4 = "4"     
+spa_0 = "_"
+spa_1 = "_"
+spa_2 = "_"
+spa_3 = "_"     
 
 #Remember to write the input for making a guess
 
 #Function of random 4 letter word, and add or not add a body part depending on the letter chosen:(done) Aaron Shelby
 def win():
-    print("Congrats, you get ඞamongiඞ !")
+   return f"Congrats, you get ඞamongiඞ !"
 
+word = random.choice(words)
+    
 def wrong():
+    global Wrong_count
     head = "0"
     body = "|"
     Larm = "/"
@@ -27,9 +32,8 @@ def wrong():
     Layer_3 = "  |"
     Layer_2 = "    |"
     Layer_1 = "---------"
-    Next_body_part = "head"
     for i in range(1):
-        if Next_body_part == "head":
+        if Wrong_count == 1:
             Layer_5 = head + Layer_5
             print(Layer_7)
             print(Layer_6)
@@ -38,8 +42,9 @@ def wrong():
             print(Layer_3)
             print(Layer_2)
             print(Layer_1)
-            Next_body_part = "body"
-        elif Next_body_part == "body":
+            return Layer_5
+        elif Wrong_count == 2:
+            Layer_5 = head + Layer_5
             Layer_4 = body + Layer_4
             print(Layer_7)
             print(Layer_6)
@@ -48,8 +53,9 @@ def wrong():
             print(Layer_3)
             print(Layer_2)
             print(Layer_1)
-            Next_body_part = "Larm"
-        elif Next_body_part == "Larm":
+            return Layer_4
+        elif Wrong_count == 3:
+            Layer_5 = head + Layer_5
             Layer_4 = Larm + body + Layer_4
             print(Layer_7)
             print(Layer_6)
@@ -58,8 +64,9 @@ def wrong():
             print(Layer_3)
             print(Layer_2)
             print(Layer_1)
-            Next_body_part = "Rarm"
-        elif Next_body_part == "Rarm":
+            return Layer_4
+        elif Wrong_count == 4:
+            Layer_5 = head + Layer_5
             Layer_4 = Larm + body + Rarm + Layer_4
             print(Layer_7)
             print(Layer_6)
@@ -68,8 +75,10 @@ def wrong():
             print(Layer_3)
             print(Layer_2)
             print(Layer_1)
-            Next_body_part = "Lleg"
-        elif Next_body_part == "Lleg":
+            return Layer_4
+        elif Wrong_count == 5:
+            Layer_5 = head + Layer_5
+            Layer_4 = Larm + body + Rarm + Layer_4 
             Layer_3 = Lleg + Layer_3
             print(Layer_7)
             print(Layer_6)
@@ -78,8 +87,10 @@ def wrong():
             print(Layer_3)
             print(Layer_2)
             print(Layer_1)
-            Next_body_part = "Rleg"
-        elif Next_body_part == "Rleg":
+            return Layer_3
+        elif Wrong_count == 6:
+            Layer_5 = head + Layer_5
+            Layer_4 = Larm + body + Rarm + Layer_4 
             Layer_3 = Lleg + Rleg + Layer_3
             print(Layer_7)
             print(Layer_6)
@@ -88,21 +99,26 @@ def wrong():
             print(Layer_3)
             print(Layer_2)
             print(Layer_1)
+            return 
         else: 
             print("Congratulations, your a failure ඞ")
+            print("The word was", word)
 #Print the gallows to hang the man: Tate Morgan 
 
-#Check the input: Amon Dippඞ and loop the guesses: Martin
+#Check the input: Amon Dippඞ and loop the guesses: Martin Labarca
 while True:
     ans = input("Tell a letter:")
-    if ans == "s":
-        spa_1 = "s"
-    elif ans == "n":
-        spa_2 = "n"
-    elif ans == "o":
-        spa_3 = "o"
-    elif ans == "w":
-        spa_4 = "w"
+    if ans == word[0]:
+        spa_0 = word[0]
+    elif ans == word[1]:
+        spa_1 = word[1]
+    elif ans == word[2]:
+        spa_2 = word[2]
+    elif ans == word[3]:
+        spa_3 = word[3]
     else:
+      Wrong_count = Wrong_count + 1
       wrong()
-    print(spa_1,spa_2,spa_3,spa_4)
+    print(spa_0,spa_1,spa_2,spa_3)
+    if spa_0== word[0] and spa_1== word[1] and spa_2== word[2] and spa_3== word[3]:
+      print(win())
